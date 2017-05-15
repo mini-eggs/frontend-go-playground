@@ -9,6 +9,7 @@ import (
 
 // GetRouter - TODO
 func GetRouter() *js.Object {
+
 	HashRouter := js.Global.Get("ReactRouterDOM").Get("HashRouter")
 	Switch := js.Global.Get("ReactRouter").Get("Switch")
 	Route := js.Global.Get("ReactRouter").Get("Route")
@@ -22,17 +23,17 @@ func GetRouter() *js.Object {
 				react.CreateElement(Switch, map[string]interface{}{
 					"key": 1,
 				}, [2]*js.Object{
-					react.CreateElement(Route, react.Props(map[string]interface{}{
+					react.CreateElement(Route, map[string]interface{}{
 						"key":       0,
 						"exact":     true,
 						"path":      "/",
 						"component": components.Home,
-					}), nil),
-					react.CreateElement(Route, react.Props(map[string]interface{}{
+					}, nil),
+					react.CreateElement(Route, map[string]interface{}{
 						"key":       1,
 						"path":      "/about",
 						"component": components.About,
-					}), nil),
+					}, nil),
 				}),
 			}),
 		)
