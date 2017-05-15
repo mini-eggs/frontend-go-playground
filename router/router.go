@@ -16,8 +16,12 @@ func GetRouter() *js.Object {
 	router :=
 		react.CreateElement(HashRouter, nil,
 			react.CreateElement("div", nil, [2]*js.Object{
-				react.CreateElement(components.Navigation, nil, nil),
-				react.CreateElement(Switch, nil, [2]*js.Object{
+				react.CreateElement(components.Navigation, map[string]interface{}{
+					"key": 0,
+				}, nil),
+				react.CreateElement(Switch, map[string]interface{}{
+					"key": 1,
+				}, [2]*js.Object{
 					react.CreateElement(Route, react.Props(map[string]interface{}{
 						"key":       0,
 						"exact":     true,
