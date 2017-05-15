@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="static/styles/main.css" />
   <title>Gopher JS and React JS</title>
 </head>
 
@@ -14,18 +14,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
   <script src="https://unpkg.com/react-router/umd/react-router.js"></script>
   <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.js"></script>
-  <script>
-    function CreateComponent(props) {
-      return class extends React.Component {
-        componentDidMount() {
-          (props.ComponentDidMount ? props.ComponentDidMount : () => { })()
-        }
-        render() {
-          return (props.Render ? props.Render : () => null)()
-        }
-      }
-    }
-  </script>
+  <script src="static/scripts/main.js"></script>
   <script src="javascript.js"></script>
 </body>
 

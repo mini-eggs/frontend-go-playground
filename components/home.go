@@ -11,34 +11,19 @@ import (
 // Home - TODO
 func Home() *js.Object {
 
-	testComponent := new(react.Component)
+	component := new(react.Component)
 
-	testComponent.ComponentDidMount = func() {
-		fmt.Println("I have been mounted")
+	component.ComponentDidMount = func() {
+		fmt.Println("I have been mounted - home")
 	}
 
-	testComponent.Render = func() *js.Object {
-		return react.CreateElement("i", react.Props(map[string]interface{}{"key": 0}), "world")
-	}
-
-	test := react.CreateElement(js.Global.Get("window").Call("CreateComponent", testComponent), nil, nil)
-
-	home :=
-		react.CreateElement("div", react.Props(map[string]interface{}{
-			"onClick": func() {
-				fmt.Println("I have been clicked")
-			},
-			"style": map[string]interface{}{
-				"display": "inline-block",
-			},
-		}), [2]*js.Object{
-			react.CreateElement("div", react.Props(map[string]interface{}{"key": 0}), [1]*js.Object{
-				react.CreateElement("i", react.Props(map[string]interface{}{"key": 0}), "hello"),
-			}),
-			react.CreateElement("div", react.Props(map[string]interface{}{"key": 1}), [1]*js.Object{
-				react.CreateElement("i", react.Props(map[string]interface{}{"key": 0}), test),
-			}),
+	component.Render = func() *js.Object {
+		return react.CreateElement("div", nil, [3]*js.Object{
+			react.CreateElement("i", map[string]interface{}{"key": 0}, "hello"),
+			react.CreateElement("br", map[string]interface{}{"key": 1}, nil),
+			react.CreateElement("i", map[string]interface{}{"key": 2}, "world"),
 		})
+	}
 
-	return home
+	return react.ReturnComponent(component, nil, nil)
 }
