@@ -9,13 +9,13 @@ import (
 // About - TODO
 func About() *js.Object {
 
-	component := new(react.Component)
+	component := new(r.Component)
 
 	component.Render = func() *js.Object {
 		markup :=
-			react.CreateElement("div", nil, react.CreateElement("i", nil, "about"))
+			r.CreateElement("div", nil, r.CreateElement("i", nil, "about"))
 		return markup
 	}
 
-	return react.ReturnComponent(component, nil, nil)
+	return r.ReturnComponent(component, nil, nil)
 }

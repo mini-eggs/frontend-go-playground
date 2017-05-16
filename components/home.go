@@ -9,17 +9,17 @@ import (
 // Home - TODO
 func Home() *js.Object {
 
-	component := new(react.Component)
+	component := new(r.Component)
 
 	component.Render = func() *js.Object {
 		markup :=
-			react.CreateElement("div", nil, [3]*js.Object{
-				react.CreateElement("i", map[string]interface{}{"key": 0}, "hello"),
-				react.CreateElement("br", map[string]interface{}{"key": 1}, nil),
-				react.CreateElement("i", map[string]interface{}{"key": 2}, "world"),
+			r.CreateElement("div", nil, [3]*js.Object{
+				r.CreateElement("i", r.Props{"key": 0}, "hello"),
+				r.CreateElement("br", r.Props{"key": 1}, nil),
+				r.CreateElement("i", r.Props{"key": 2}, "world"),
 			})
 		return markup
 	}
 
-	return react.ReturnComponent(component, nil, nil)
+	return r.ReturnComponent(component, nil, nil)
 }

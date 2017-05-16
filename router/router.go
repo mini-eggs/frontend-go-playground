@@ -15,21 +15,21 @@ func GetRouter() *js.Object {
 	Route := js.Global.Get("ReactRouter").Get("Route")
 
 	router :=
-		react.CreateElement(HashRouter, nil,
-			react.CreateElement("div", nil, [2]*js.Object{
-				react.CreateElement(components.Navigation, map[string]interface{}{
+		r.CreateElement(HashRouter, nil,
+			r.CreateElement("div", nil, [2]*js.Object{
+				r.CreateElement(components.Navigation, r.Props{
 					"key": 0,
 				}, nil),
-				react.CreateElement(Switch, map[string]interface{}{
+				r.CreateElement(Switch, r.Props{
 					"key": 1,
 				}, [2]*js.Object{
-					react.CreateElement(Route, map[string]interface{}{
+					r.CreateElement(Route, r.Props{
 						"key":       0,
 						"exact":     true,
 						"path":      "/",
 						"component": components.Home,
 					}, nil),
-					react.CreateElement(Route, map[string]interface{}{
+					r.CreateElement(Route, r.Props{
 						"key":       1,
 						"path":      "/about",
 						"component": components.About,

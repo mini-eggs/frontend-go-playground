@@ -1,8 +1,11 @@
-package react
+package r
 
 import (
 	"github.com/gopherjs/gopherjs/js"
 )
+
+// Props- TODO
+type Props map[string]interface{}
 
 // CreateElement - TODO
 func CreateElement(elementType interface{}, props interface{}, children interface{}) *js.Object {
