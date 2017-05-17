@@ -28,6 +28,8 @@
   },
   "scripts": {
     "start": " concurrently --kill-others --raw \" gopherjs serve \" \" npm run webpack-dev \" ",
+    "build": " gopherjs build && npm run webpack-build && npm run move-files ",
+    "move-files": " rm -rf dist && rsync -av ./static ./dist && rsync -av ./index.html ./dist && rsync -av ./javascript.js ./dist ",
     "webpack-dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --watch",
     "webpack-build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   }
