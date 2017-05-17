@@ -1,0 +1,22 @@
+body {
+  margin: 50px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  body i {
+    font-weight: 800;
+    font-size: 48px; }
+  body .navigation-wrapper {
+    padding-bottom: 50px; }
+header nav ul {
+  padding: 0; }
+  header nav ul li {
+    display: inline-block; }
+    header nav ul li a {
+      text-decoration: none;
+      padding: 5px 10px;
+      color: black; }
+      header nav ul li a:hover {
+        background-color: rgba(0, 0, 0, 0.25); }
+      header nav ul li a:focus {
+        background-color: transparent; }

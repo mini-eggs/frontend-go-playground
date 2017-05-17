@@ -1,5 +1,7 @@
-function CreateComponent(props) {
-  return class extends React.Component {
+import { Component } from "react";
+
+export default function CreateComponent(props) {
+  return class extends Component {
     componentDidMount() {
       (props.ComponentDidMount ? props.ComponentDidMount : () => {})();
     }

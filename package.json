@@ -1,0 +1,34 @@
+{
+  "name": "frontend-golang",
+  "version": "1.0.0",
+  "main": "main.go",
+  "repository": "https://github.com/mini-eggs/frontend-go-playground.git",
+  "author": "<evanjones4040@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "compression-webpack-plugin": "^0.4.0",
+    "concurrently": "^3.4.0",
+    "cross-env": "^5.0.0",
+    "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.17.0",
+    "webpack": "^2.5.1"
+  },
+  "scripts": {
+    "start": " concurrently --kill-others --raw \" gopherjs serve \" \" npm run webpack-dev \" ",
+    "webpack-dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --watch",
+    "webpack-build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+  }
+}
